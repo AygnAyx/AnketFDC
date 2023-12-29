@@ -84,7 +84,7 @@ function kaydet() {
 // Anketi bitir butonunu kontrol et ve gizle
 function kontrolVeGizle() {
     var anketiBitirButton = document.getElementById("anketiBitirButton");
-    //var anketiBitirTextBox = document.getElementById("textBox");
+    var anketiBitirTextBox = document.getElementById("textBox");
 
     if (aktifSayfa === 44) {
         anketiBitirButton.style.display = "block";
