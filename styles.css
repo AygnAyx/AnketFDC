@@ -1,0 +1,200 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #f2f2f2;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.degerKutusu {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.degerAdi {
+    flex: 1;
+}
+
+.degerGosterici {
+    flex: 3;
+    height: 15px;
+    background-color: #ddd;
+    margin: 0 5px;
+    position: relative;
+    border-radius: 4px;
+}
+
+.degerGostericiH {
+    position: relative;
+    flex: 0 160px;
+    height: 15px;
+    left: 60px;
+    top: 5px;
+    background-color: #a9a9a9;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+.degerGostericiD {
+    position: relative;
+    flex: 0 160px;
+    height: 15px;
+    left: 33px;
+    top: 5px;
+    background-color: #a9a9a9;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+.degerGostericiS {
+    position: relative;
+    flex: 0 160px;
+    height: 15px;
+    left: 60px;
+    top: 5px;
+    background-color: #a9a9a9;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+.degerGostericiP {
+    position: relative;
+    flex: 0 160px;
+    height: 15px;
+    left: 57px;
+    top: 5px;
+    background-color: #a9a9a9;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+.degerGostericiK {
+    position: relative;
+    flex: 0 160px;
+    height: 15px;
+    left: 26px;
+    top: 5px;
+    background-color: #a9a9a9;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+
+.degerGiriciH {
+    position: relative;
+    left: 59px;
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+.degerGiriciD {
+    position: relative;
+    left: 33px;
+    right: 100px;
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+.degerGiriciS {
+    position: relative;
+    left: 59px;
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+.degerGiriciP {
+    position: relative;
+    left: 56px;
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+.degerGiriciK {
+    position: relative;
+    left: 25px;
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+
+.sayfaBilgisiCerceve {
+    border: 1px solid #000; /* Çerçeve rengi */
+    padding: 10px; /* Çerçeve iç kenar boşluğu */
+    display: flex; /* İçeriği dikey ve yatayda merkeze almak için flex kullanıyoruz */
+    align-items: center; /* Dikeyde merkezleme */
+    justify-content: center; /* Yatayda merkezleme */
+    border-radius: 10px; /* Çerçeve köşe yuvarlama */
+    color: #fff;
+    height: 15px; /* Çerçeve yüksekliği */
+}
+
+
+/* .gorsel-container stilini belirle */
+.gorsel-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 100%; /* İhtiyaca göre ayarlayabilirsiniz */
+    max-width: 20%; /* Maksimum genişlik belirle (isteğe bağlı) */
+    z-index: 999; /* Diğer elementlerin üzerinde olması için z-index ekleyin (isteğe bağlı) */
+    overflow-x: hidden; /* Diğer elemanları kaydırmayı engelle */
+}
+
+/* Görselin boyutunu küçült */
+.gorsel-container img {
+    width: 80%; /* İhtiyaca göre ayarlayabilirsiniz */
+    height: auto; /* Genişlik oranına göre otomatik ayarlama yapar */
+}
+
+/* Diğer stiller ... */
+
+p {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+.kalanPuan {
+    color: red;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:hover {
+    background-color: #45a049;
+}

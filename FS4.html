@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbol Oyuncusu Yetenek Değerlendirmesi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="baslangicEkrani">
+        <h1>Ankete Hoş Geldiniz!</h1>
+        <p>Anketimize başlamak için aşağıdaki butona tıklayın.</p>
+        <button onclick="baslaAnket()">Başla</button>
+    </div>
+    <form id="anketForm" style="display: none;">
+        <div class="sayfaBilgisiCerceve">
+            <p id="sayfaBilgisi"></p>
+        </div>
+        <h1 style="text-align: center;">Futbol Oyuncusu Yetenek Değerlendirmesi</h1>
+
+        <!-- Sayfalar -->
+        <div id="sayfalar">
+            <!-- Her bir sayfa bir div içine alınmıştır -->
+            <!-- Örneğin, ilk sayfanın id'si "sayfa1" olarak atanmıştır -->
+            <div class="sayfa" id="sayfa1">
+                <h2>Özcan</h2>
+                <p>Toplam Puan: <span id="toplamPuan1">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz1" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz1" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici1', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici1"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans1" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans1" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici1', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici1"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut1" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut1" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici1', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici1"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas1" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas1" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici1', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici1"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik1" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik1" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici1', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici1"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan1">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel1.png" alt="Sayfa 1 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa2" style="display: none;">
+                <h2>Özgül</h2>
+                <p>Toplam Puan: <span id="toplamPuan2">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz2" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz2" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici2', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici2"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans2" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans2" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici2', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici2"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut2" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut2" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici2', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici2"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas2" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas2" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici2', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici2"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik2" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik2" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici2', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici2"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan2">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel2.png" alt="Sayfa 2 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa3" style="display: none;">
+                <h2>İbrahim</h2>
+                <p>Toplam Puan: <span id="toplamPuan3">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz3" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz3" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici3', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici3"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans3" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans3" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici3', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici3"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut3" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut3" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici3', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici3"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas3" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas3" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici3', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici3"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik3" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik3" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici3', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici3"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan3">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel3.png" alt="Sayfa 3 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa4" style="display: none;">
+                <h2>Burcu</h2>
+                <p>Toplam Puan: <span id="toplamPuan4">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz4" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz4" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici4', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici4"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans4" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans4" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici4', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici4"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut4" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut4" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici4', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici4"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas4" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas4" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici4', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici4"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik4" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik4" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici4', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici4"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan4">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel4.png" alt="Sayfa 4 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa5" style="display: none;">
+                <h2>Ayhan</h2>
+                <p>Toplam Puan: <span id="toplamPuan5">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz5" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz5" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici5', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici5"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans5" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans5" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici5', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici5"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut5" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut5" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici5', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici5"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas5" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas5" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici5', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici5"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik5" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik5" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici5', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici5"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan5">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel5.png" alt="Sayfa 5 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa6" style="display: none;">
+                <h2>Vasfiye</h2>
+                <p>Toplam Puan: <span id="toplamPuan6">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz6" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz6" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici6', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici6"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans6" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans6" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici6', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici6"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut6" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut6" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici6', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici6"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas6" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas6" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici6', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici6"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik6" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik6" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici6', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici6"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan6">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel6.png" alt="Sayfa 6 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa7" style="display: none;">
+                <h2>Nurşah</h2>
+                <p>Toplam Puan: <span id="toplamPuan7">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz7" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz7" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici7', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici7"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans7" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans7" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici7', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici7"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut7" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut7" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici7', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici7"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas7" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas7" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici7', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici7"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik7" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik7" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici7', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici7"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan7">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel7.png" alt="Sayfa 7 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa8" style="display: none;">
+                <h2>Alican</h2>
+                <p>Toplam Puan: <span id="toplamPuan8">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz8" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz8" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici8', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici8"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans8" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans8" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici8', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici8"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut8" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut8" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici8', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici8"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas8" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas8" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici8', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici8"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik8" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik8" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici8', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici8"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan8">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel8.png" alt="Sayfa 8 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa9" style="display: none;">
+                <h2>Hüseyin</h2>
+                <p>Toplam Puan: <span id="toplamPuan9">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz9" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz9" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici9', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici9"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans9" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans9" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici9', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici9"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut9" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut9" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici9', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici9"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas9" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas9" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici9', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici9"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik9" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik9" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici9', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici9"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan9">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel9.png" alt="Sayfa 9 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa10" style="display: none;">
+                <h2>Ali Ç.</h2>
+                <p>Toplam Puan: <span id="toplamPuan10">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz10" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz10" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici10', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici10"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans10" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans10" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici10', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici10"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut10" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut10" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici10', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici10"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas10" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas10" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici10', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici10"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik10" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik10" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici10', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici10"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan10">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel10.png" alt="Sayfa 10 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa11" style="display: none;">
+                <h2>Yusuf</h2>
+                <p>Toplam Puan: <span id="toplamPuan11">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz11" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz11" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici11', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici11"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans11" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans11" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici11', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici11"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut11" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut11" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici11', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici11"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas11" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas11" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici11', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici11"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik11" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik11" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici11', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici11"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan11">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel11.png" alt="Sayfa 11 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa12" style="display: none;">
+                <h2>Nermin</h2>
+                <p>Toplam Puan: <span id="toplamPuan12">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz12" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz12" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici12', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici12"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans12" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans12" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici12', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici12"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut12" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut12" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici12', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici12"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas12" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas12" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici12', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici12"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik12" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik12" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici12', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici12"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan12">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel12.png" alt="Sayfa 12 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa13" style="display: none;">
+                <h2>Sara</h2>
+                <p>Toplam Puan: <span id="toplamPuan13">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz13" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz13" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici13', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici13"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans13" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans13" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici13', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici13"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut13" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut13" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici13', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici13"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas13" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas13" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici13', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici13"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik13" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik13" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici13', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici13"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan13">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel13.png" alt="Sayfa 13 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa14" style="display: none;">
+                <h2>Deniz Ç.</h2>
+                <p>Toplam Puan: <span id="toplamPuan14">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz14" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz14" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici14', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici14"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans14" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans14" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici14', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici14"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut14" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut14" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici14', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici14"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas14" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas14" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici14', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici14"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik14" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik14" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici14', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici14"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan14">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel14.png" alt="Sayfa 14 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa15" style="display: none;">
+                <h2>Doğukan</h2>
+                <p>Toplam Puan: <span id="toplamPuan15">20</span></p>
+                    <div class="degerKutusu">
+                    <label for="hiz15" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz15" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici15', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici15"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans15" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans15" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici15', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici15"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut15" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut15" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici15', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici15"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas15" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas15" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici15', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici15"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik15" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik15" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici15', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici15"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan15">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel15.png" alt="Sayfa 15 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa16" style="display: none;">
+                <h2>Celo</h2>
+                <p>Toplam Puan: <span id="toplamPuan16">20</span></p>
+                    <div class="degerKutusu">
+                    <label for="hiz16" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz16" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici16', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici16"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans16" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans16" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici16', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici16"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut16" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut16" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici16', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici16"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas16" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas16" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici16', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici16"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik16" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik16" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici16', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici16"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan16">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel16.png" alt="Sayfa 16 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa17" style="display: none;">
+                <h2>Umut</h2>
+                <p>Toplam Puan: <span id="toplamPuan17">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz17" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz17" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici17', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici17"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans17" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans17" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici17', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici17"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut17" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut17" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici17', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici17"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas17" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas17" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici17', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici17"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik17" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik17" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici17', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici17"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan17">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel17.png" alt="Sayfa 17 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa18" style="display: none;">
+                <h2>Sevcan</h2>
+                <p>Toplam Puan: <span id="toplamPuan18">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz18" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz18" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici18', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici18"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans18" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans18" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici18', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici18"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut18" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut18" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici18', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici18"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas18" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas18" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici18', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici18"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik18" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik18" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici18', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici18"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan18">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel18.png" alt="Sayfa 18 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa19" style="display: none;">
+                <h2>Destan</h2>
+                <p>Toplam Puan: <span id="toplamPuan19">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz19" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz19" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici19', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici19"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans19" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans19" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici19', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici19"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut19" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut19" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici19', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici19"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas19" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas19" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici19', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici19"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik19" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik19" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici19', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici19"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan19">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel19.png" alt="Sayfa 19 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa20" style="display: none;">
+                <h2>Mutia</h2>
+                <p>Toplam Puan: <span id="toplamPuan20">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz20" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz20" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici20', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici20"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans20" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans20" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici20', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici20"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut20" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut20" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici20', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici20"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas20" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas20" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici20', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici20"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik20" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik20" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici20', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici20"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan20">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel20.png" alt="Sayfa 20 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa21" style="display: none;">
+                <h2>Hasan</h2>
+                <p>Toplam Puan: <span id="toplamPuan21">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz21" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz21" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici21', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici21"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans21" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans21" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici21', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici21"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut21" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut21" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici21', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici21"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas21" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas21" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici21', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici21"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik21" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik21" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici21', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici21"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan21">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel21.png" alt="Sayfa 21 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa22" style="display: none;">
+                <h2>İsa</h2>
+                <p>Toplam Puan: <span id="toplamPuan22">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz22" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz22" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici22', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici22"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans22" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans22" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici22', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici22"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut22" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut22" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici22', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici22"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas22" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas22" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici22', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici22"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik22" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik22" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici22', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici22"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan22">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel22.png" alt="Sayfa 22 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa23" style="display: none;">
+                <h2>Edanur</h2>
+                <p>Toplam Puan: <span id="toplamPuan23">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz23" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz23" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici23', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici23"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans23" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans23" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici23', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici23"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut23" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut23" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici23', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici23"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas23" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas23" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici23', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici23"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik23" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik23" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici23', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici23"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan23">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel23.png" alt="Sayfa 23 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa24" style="display: none;">
+                <h2>Merve</h2>
+                <p>Toplam Puan: <span id="toplamPuan24">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz24" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz24" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici24', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici24"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans24" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans24" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici24', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici24"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut24" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut24" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici24', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici24"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas24" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas24" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici24', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici24"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik24" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik24" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici24', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici24"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan24">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel24.png" alt="Sayfa 24 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa25" style="display: none;">
+                <h2>Sudem</h2>
+                <p>Toplam Puan: <span id="toplamPuan25">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz25" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz25" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici25', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici25"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans25" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans25" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici25', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici25"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut25" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut25" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici25', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici25"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas25" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas25" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici25', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici25"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik25" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik25" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici25', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici25"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan25">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel25.png" alt="Sayfa 25 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa26" style="display: none;">
+                <h2>Yağmur</h2>
+                <p>Toplam Puan: <span id="toplamPuan26">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz26" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz26" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici26', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici26"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans26" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans26" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici26', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici26"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut26" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut26" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici26', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici26"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas26" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas26" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici26', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici26"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik26" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik26" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici26', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici26"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan26">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel26.png" alt="Sayfa 26 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa27" style="display: none;">
+                <h2>Fındık</h2>
+                <p>Toplam Puan: <span id="toplamPuan27">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz27" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz27" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici27', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici27"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans27" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans27" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici27', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici27"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut27" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut27" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici27', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici27"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas27" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas27" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici27', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici27"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik27" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik27" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici27', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici27"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan27">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel27.png" alt="Sayfa 27 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa28" style="display: none;">
+                <h2>Işık</h2>
+                <p>Toplam Puan: <span id="toplamPuan28">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz28" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz28" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici28', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici28"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans28" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans28" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici28', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici28"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut28" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut28" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici28', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici28"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas28" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas28" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici28', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici28"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik28" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik28" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici28', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici28"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan28">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel28.png" alt="Sayfa 28 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa29" style="display: none;">
+                <h2>Bengi</h2>
+                <p>Toplam Puan: <span id="toplamPuan29">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz29" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz29" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici29', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici29"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans29" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans29" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici29', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici29"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut29" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut29" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici29', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici29"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas29" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas29" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici29', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici29"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik29" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik29" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici29', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici29"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan29">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel29.png" alt="Sayfa 29 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa30" style="display: none;">
+                <h2>Eren</h2>
+                <p>Toplam Puan: <span id="toplamPuan30">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz30" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz30" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici30', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici30"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans30" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans30" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici30', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici30"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut30" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut30" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici30', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici30"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas30" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas30" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici30', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici30"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik30" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik30" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici30', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici30"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan30">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel30.png" alt="Sayfa 30 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa31" style="display: none;">
+                <h2>Ediz</h2>
+                <p>Toplam Puan: <span id="toplamPuan31">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz31" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz31" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici31', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici31"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans31" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans31" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici31', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici31"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut31" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut31" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici31', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici31"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas31" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas31" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici31', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici31"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik31" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik31" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici31', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici31"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan31">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel31.png" alt="Sayfa 31 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa32" style="display: none;">
+                <h2>Enes</h2>
+                <p>Toplam Puan: <span id="toplamPuan32">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz32" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz32" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici32', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici32"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans32" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans32" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici32', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici32"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut32" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut32" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici32', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici32"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas32" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas32" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici32', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici32"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik32" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik32" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici32', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici32"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan32">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel32.png" alt="Sayfa 32 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa33" style="display: none;">
+                <h2>Aygün</h2>
+                <p>Toplam Puan: <span id="toplamPuan33">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz33" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz33" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici33', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici33"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans33" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans33" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici33', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici33"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut33" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut33" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici33', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici33"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas33" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas33" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici33', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici33"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik33" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik33" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici33', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici33"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan33">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel33.png" alt="Sayfa 33 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa34" style="display: none;">
+                <h2>Cemre</h2>
+                <p>Toplam Puan: <span id="toplamPuan34">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz34" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz34" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici34', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici34"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans34" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans34" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici34', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici34"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut34" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut34" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici34', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici34"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas34" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas34" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici34', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici34"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik34" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik34" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici34', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici34"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan34">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel34.png" alt="Sayfa 34 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa35" style="display: none;">
+                <h2>Aleyna</h2>
+                <p>Toplam Puan: <span id="toplamPuan35">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz35" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz35" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici35', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici35"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans35" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans35" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici35', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici35"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut35" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut35" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici35', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici35"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas35" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas35" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici35', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici35"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik35" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik35" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici35', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici35"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan35">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel35.png" alt="Sayfa 35 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa36" style="display: none;">
+                <h2>Bora</h2>
+                <p>Toplam Puan: <span id="toplamPuan36">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz36" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz36" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici36', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici36"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans36" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans36" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici36', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici36"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut36" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut36" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici36', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici36"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas36" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas36" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici36', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici36"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik36" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik36" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici36', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici36"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan36">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel36.png" alt="Sayfa 36 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa37" style="display: none;">
+                <h2>Tolga</h2>
+                <p>Toplam Puan: <span id="toplamPuan37">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz37" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz37" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici37', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici37"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans37" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans37" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici37', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici37"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut37" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut37" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici37', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici37"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas37" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas37" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici37', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici37"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik37" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik37" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici37', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici37"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan37">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel37.png" alt="Sayfa 37 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa38" style="display: none;">
+                <h2>Deniz H.</h2>
+                <p>Toplam Puan: <span id="toplamPuan38">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz38" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz38" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici38', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici38"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans38" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans38" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici38', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici38"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut38" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut38" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici38', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici38"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas38" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas38" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici38', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici38"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik38" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik38" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici38', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici38"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan38">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel38.png" alt="Sayfa 38 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa39" style="display: none;">
+                <h2>Hilal</h2>
+                <p>Toplam Puan: <span id="toplamPuan39">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz39" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz39" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici39', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici39"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans39" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans39" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici39', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici39"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut39" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut39" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici39', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici39"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas39" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas39" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici39', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici39"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik39" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik39" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici39', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici39"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan39">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel39.png" alt="Sayfa 39 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa40" style="display: none;">
+                <h2>Abuzer</h2>
+                <p>Toplam Puan: <span id="toplamPuan40">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz40" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz40" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici40', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici40"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans40" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans40" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici40', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici40"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut40" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut40" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici40', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici40"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas40" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas40" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici40', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici40"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik40" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik40" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici40', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici40"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan40">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel40.png" alt="Sayfa 40 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa41" style="display: none;">
+                <h2>Şahan</h2>
+                <p>Toplam Puan: <span id="toplamPuan41">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz41" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz41" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici41', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici41"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans41" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans41" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici41', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici41"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut41" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut41" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici41', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici41"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas41" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas41" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici41', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici41"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik41" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik41" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici41', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici41"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan41">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel41.png" alt="Sayfa 41 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa42" style="display: none;">
+                <h2>Ebrar</h2>
+                <p>Toplam Puan: <span id="toplamPuan42">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz42" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz42" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici42', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici42"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans42" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans42" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici42', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici42"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut42" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut42" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici42', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici42"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas42" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas42" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici42', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici42"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik42" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik42" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici42', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici42"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan42">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel42.png" alt="Sayfa 42 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa43" style="display: none;">
+                <h2>Zeynep</h2>
+                <p>Toplam Puan: <span id="toplamPuan43">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz43" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz43" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici43', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici43"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans43" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans43" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici43', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici43"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut43" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut43" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici43', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici43"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas43" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas43" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici43', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici43"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik43" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik43" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici43', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici43"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan43">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel43.png" alt="Sayfa 43 Görsel">
+                </div>
+            </div>
+            <div class="sayfa" id="sayfa44" style="display: none;">
+                <h2>Selin</h2>
+                <p>Toplam Puan: <span id="toplamPuan44">20</span></p>
+                <div class="degerKutusu">
+                    <label for="hiz44" class="degerAdi">Hız:</label>
+                    <input type="number" id="hiz44" class="degerGiriciH" name="hiz" min="1" max="8" oninput="gostericiUzunluguGuncelle('hizGosterici44', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiH" id="hizGosterici44"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="defans44" class="degerAdi">Defans:</label>
+                    <input type="number" id="defans44" class="degerGiriciD" name="defans" min="1" max="8" oninput="gostericiUzunluguGuncelle('defansGosterici44', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiD" id="defansGosterici44"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="sut44" class="degerAdi">Şut:</label>
+                    <input type="number" id="sut44" class="degerGiriciS" name="sut" min="1" max="8" oninput="gostericiUzunluguGuncelle('sutGosterici44', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiS" id="sutGosterici44"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="pas44" class="degerAdi">Pas:</label>
+                    <input type="number" id="pas44" class="degerGiriciP" name="pas" min="1" max="8" oninput="gostericiUzunluguGuncelle('pasGosterici44', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiP" id="pasGosterici44"></div>
+                    </div>
+                </div>
+					<div class="degerKutusu">
+                    <label for="kalecilik44" class="degerAdi">Kalecilik:</label>
+                    <input type="number" id="kalecilik44" class="degerGiriciK" name="kalecilik" min="1" max="8" oninput="gostericiUzunluguGuncelle('kalecilikGosterici44', this.value)" required>
+                    <div class="degerKutusu">
+                        <div class="degerGostericiK" id="kalecilikGosterici44"></div>
+                    </div>
+                </div>
+				
+                <p>Kalan Puan: <span id="kalanPuan44">20</span></p>
+                <div class="gorsel-container">
+                    <img src="Gorseller/gorsel44.png" alt="Sayfa 44 Görsel">
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <!-- Butonlar -->
+        <button type="button" onclick="oncekiSayfa()" id="oncekiBtn">Önceki</button>
+        <button type="button" onclick="kaydet()">Kontrol</button>
+        <button type="button" onclick="sonrakiSayfa()" id="sonrakiBtn">Sonraki</button>
+        <button type="button" onclick="anketiBitir()" id="anketiBitirButton" style="display: none;">Anketi Bitir</button>
+
+        <!-- Box öğesi -->
+        <div id="textBox" style="display: none;">
+            <div class="info-box" id="sonuclarBox"></div>
+            <textarea id="sonuclarTextarea" rows="10" cols="50" readonly></textarea>
+        </div>
+        
+        <script src="script.js"></script>
+        <div id="sonuclar"></div>
+
+    </form>
+</body>
+</html>
